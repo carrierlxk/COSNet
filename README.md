@@ -18,6 +18,8 @@ Command: python test_coattention_conf.py --dataset davis --gpus 0
 
 The pretrained weight can be download from [GoogleDrive](https://drive.google.com/open?id=14ya3ZkneeHsegCgDrvkuFtGoAfVRgErz)
 
+The segmentation results on DAVIS, FBMS and Youtube-objects can be download from [GoogleDrive](https://drive.google.com/open?id=1DuNYAXPoCRyFmV7fGOuImIqJsFjEgKT4).
+
 ### Citation
 If you find the code and dataset useful in your research, please consider citing:
 
