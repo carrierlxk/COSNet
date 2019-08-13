@@ -10,13 +10,13 @@ Co-Attention Siamese Networks.[paper](http://openaccess.thecvf.com/content_CVPR_
 
 ### Quick Start
 
-1. Install pytorch (version:1.0.1)
+1. Install pytorch (version:1.0.1).
 
 2. Download the pretrained model. Run 'test_coattention_conf.py' and change the davis dataset path, pretrainde model path and result path.
 
 Command: python test_coattention_conf.py --dataset davis --gpus 0
 
-The pretrained weight can be download from [GoogleDrive](https://drive.google.com/open?id=14ya3ZkneeHsegCgDrvkuFtGoAfVRgErz)
+The pretrained weight can be download from [GoogleDrive](https://drive.google.com/open?id=14ya3ZkneeHsegCgDrvkuFtGoAfVRgErz).
 
 The segmentation results on DAVIS, FBMS and Youtube-objects can be download from [GoogleDrive](https://drive.google.com/open?id=1DuNYAXPoCRyFmV7fGOuImIqJsFjEgKT4).
 
