@@ -18,6 +18,7 @@ The pretrained weight can be download from [GoogleDrive](https://drive.google.co
 If you find the code and dataset useful in your research, please consider citing:
 
 @InProceedings{Lu_2019_CVPR,
+
 author = {Lu, Xiankai and Wang, Wenguan and Ma, Chao and Shen, Jianbing and Shao, Ling and Porikli, Fatih},
 
 title = {See More, Know More: Unsupervised Video Object Segmentation With Co-Attention Siamese Networks},
