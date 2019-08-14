@@ -1,6 +1,6 @@
 # COSNet
 Code for CVPR 2019 paper: See More, Know More: Unsupervised Video Object Segmentation with
-Co-Attention Siamese Networks.[paper](http://openaccess.thecvf.com/content_CVPR_2019/papers/Lu_See_More_Know_More_Unsupervised_Video_Object_Segmentation_With_Co-Attention_CVPR_2019_paper.pdf)
+Co-Attention Siamese Networks.[Paper](http://openaccess.thecvf.com/content_CVPR_2019/papers/Lu_See_More_Know_More_Unsupervised_Video_Object_Segmentation_With_Co-Attention_CVPR_2019_paper.pdf)
 
 ##
 
@@ -14,7 +14,7 @@ Co-Attention Siamese Networks.[paper](http://openaccess.thecvf.com/content_CVPR_
 
 2. Download the pretrained model. Run 'test_coattention_conf.py' and change the davis dataset path, pretrainde model path and result path.
 
-Command: python test_coattention_conf.py --dataset davis --gpus 0
+3. Run command: python test_coattention_conf.py --dataset davis --gpus 0
 
 The pretrained weight can be download from [GoogleDrive](https://drive.google.com/open?id=14ya3ZkneeHsegCgDrvkuFtGoAfVRgErz).
 
