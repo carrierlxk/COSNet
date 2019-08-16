@@ -20,7 +20,7 @@ Co-Attention Siamese Networks.[Paper](http://openaccess.thecvf.com/content_CVPR_
 
 The pretrained weight can be download from [GoogleDrive](https://drive.google.com/open?id=14ya3ZkneeHsegCgDrvkuFtGoAfVRgErz) or [BaiduPan](https://pan.baidu.com/s/16oFzRmn4Meuq83fCYr4boQ), pass code: xwup.
 
-The segmentation results on DAVIS, FBMS and Youtube-objects can be download from [GoogleDrive](https://drive.google.com/open?id=1DuNYAXPoCRyFmV7fGOuImIqJsFjEgKT4),[BaiduPan](https://pan.baidu.com/s/1528vUQLH98qV93dsH-wqhw), pass code: nzbq.
+The segmentation results on DAVIS, FBMS and Youtube-objects can be download from [GoogleDrive](https://drive.google.com/open?id=1DuNYAXPoCRyFmV7fGOuImIqJsFjEgKT4) or [BaiduPan](https://pan.baidu.com/s/1528vUQLH98qV93dsH-wqhw), pass code: nzbq.
 
 ### Citation
 If you find the code and dataset useful in your research, please consider citing:
