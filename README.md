@@ -10,6 +10,8 @@ Co-Attention Siamese Networks](http://openaccess.thecvf.com/content_CVPR_2019/pa
 
 ![](../master/framework.png)
 
+- - -
+
 ###The pre-trained model and testing code:
 
 ### Quick Start
