@@ -1,6 +1,10 @@
 # COSNet
-Code for CVPR 2019 paper: See More, Know More: Unsupervised Video Object Segmentation with
-Co-Attention Siamese Networks.[Paper](http://openaccess.thecvf.com/content_CVPR_2019/papers/Lu_See_More_Know_More_Unsupervised_Video_Object_Segmentation_With_Co-Attention_CVPR_2019_paper.pdf)
+Code for CVPR 2019 paper: 
+
+[See More, Know More: Unsupervised Video Object Segmentation with
+Co-Attention Siamese Networks](http://openaccess.thecvf.com/content_CVPR_2019/papers/Lu_See_More_Know_More_Unsupervised_Video_Object_Segmentation_With_Co-Attention_CVPR_2019_paper.pdf)
+
+[Xiankai Lu](https://sites.google.com/site/xiankailu111/),[Wenguan Wang](https://sites.google.com/view/wenguanwang), Chao Ma, Jianbing Shen, Ling Shao, Fatih Porikli
 
 ##
 
