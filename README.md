@@ -42,6 +42,7 @@ year = {2019}
 
 ### Other related projects/papers:
 [Saliency-Aware Geodesic Video Object Segmentation (CVPR15)](https://github.com/wenguanwang/saliencysegment)
+
 [Learning Unsupervised Video Primary Object Segmentation through Visual Attention (CVPR19)](https://github.com/wenguanwang/AGS)
 
 Any comments, please email: carrierlxk@gmail.com
