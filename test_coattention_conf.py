@@ -8,7 +8,7 @@ Created on Mon Sep 17 17:53:20 2018
 import argparse
 import torch
 import torch.nn as nn
-#from torch.utils import data
+from torch.utils import data
 import numpy as np
 import pickle
 import cv2
@@ -28,7 +28,7 @@ from PIL import Image
 from collections import OrderedDict
 import matplotlib.pyplot as plt
 import torch.nn as nn
-from utils.colorize_mask import cityscapes_colorize_mask, VOCColorize
+#from utils.colorize_mask import cityscapes_colorize_mask, VOCColorize
 #import pydensecrf.densecrf as dcrf
 #from pydensecrf.utils import unary_from_softmax, create_pairwise_bilateral, create_pairwise_gaussian
 from deeplab.siamese_model_conf import CoattentionNet
