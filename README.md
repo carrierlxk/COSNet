@@ -28,6 +28,8 @@ The pretrained weight can be download from [GoogleDrive](https://drive.google.co
 
 The segmentation results on DAVIS, FBMS and Youtube-objects can be download from [GoogleDrive](https://drive.google.com/open?id=1JRPc2kZmzx0b7WLjxTPD-kdgFdXh5gBq) or [BaiduPan](https://pan.baidu.com/s/11n7zAt3Lo2P3-42M2lsw6Q), pass code: q37f.
 
+We will release the training codes soon.
+
 ### Citation
 If you find the code and dataset useful in your research, please consider citing:
 
