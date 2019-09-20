@@ -156,7 +156,7 @@ def main():
     elif args.dataset == 'davis':  #for davis 2016
         db_test = db.PairwiseImg(train=False, inputRes=(473,473), db_root_dir=args.data_dir,  transform=None, seq_name = None, sample_range = args.sample_range) #db_root_dir() --> '/path/to/DAVIS-2016' train path
         testloader = data.DataLoader(db_test, batch_size= 1, shuffle=False, num_workers=0)
-        voc_colorize = VOCColorize()
+        #voc_colorize = VOCColorize()
     else:
         print("dataset error")
 
