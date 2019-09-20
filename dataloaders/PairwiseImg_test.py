@@ -14,7 +14,7 @@ from scipy.misc import imresize
 import scipy.misc 
 import random
 
-from dataloaders.helpers import *
+#from dataloaders.helpers import *
 from torch.utils.data import Dataset
 
 def flip(I,flip_p):
