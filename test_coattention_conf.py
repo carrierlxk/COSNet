@@ -125,13 +125,6 @@ def main():
     print("=====> Configure dataset and model")
     configure_dataset_model(args)
     print(args)
-
-    print("=====> Set GPU for training")
-    if args.cuda:
-        print("====> Use gpu id: '{}'".format(args.gpus))
-        os.environ["CUDA_VISIBLE_DEVICES"] = args.gpus
-        if not torch.cuda.is_available():
-            raise Exception("No GPU found or Wrong gpu id, please run without --cuda")
     model = CoattentionNet(num_classes=args.num_classes)
     
     saved_state_dict = torch.load(args.restore_from, map_location=lambda storage, loc: storage)
