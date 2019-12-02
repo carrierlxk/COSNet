@@ -12,7 +12,7 @@ Co-Attention Siamese Networks](http://openaccess.thecvf.com/content_CVPR_2019/pa
 
 - - -
 
-###The pre-trained model and testing code:
+The pre-trained model and testing code:
 
 ### Quick Start
 
@@ -32,7 +32,11 @@ The segmentation results on DAVIS, FBMS and Youtube-objects can be download from
 
 #### Training
 
+1. Download all the training datasets, including MARA10K and DUT saliency dataset.
 
+2. Download the deeplabv3 model which has been finetuned.
+
+3. Change the path in 
 
 ### Citation
 If you find the code and dataset useful in your research, please consider citing:
