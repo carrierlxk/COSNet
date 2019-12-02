@@ -39,7 +39,7 @@ The segmentation results on DAVIS, FBMS and Youtube-objects can be download from
 
 2. Download the deeplabv3 model from [GoogleDrive](https://drive.google.com/open?id=1hy0-BAEestT9H4a3Sv78xrHrzmZga9mj). Put it into the folder pretrained/deep_labv3.
 
-3. Change the video path, image path and deeplabv3 path in train_iteration_conf.py.  
+3. Change the video path, image path and deeplabv3 path in train_iteration_conf.py.  Create two txt files which store the saliency dataset name and DAVIS16 training sequences name. Change the txt path in PairwiseImg_video.py.
 
 4. Run command: python train_iteration_conf.py --dataset davis --gpus 0,1
 
