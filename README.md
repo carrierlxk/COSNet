@@ -32,11 +32,11 @@ The segmentation results on DAVIS, FBMS and Youtube-objects can be download from
 
 #### Training
 
-1. Download all the training datasets, including MARA10K and DUT saliency dataset.
+1. Download all the training datasets, including MARA10K and DUT saliency datasets. Create a folder called images and put these two datasets into the folder. 
 
-2. Download the deeplabv3 model which has been finetuned.
+2. Download the deeplabv3 model from [GoogleDrive](https://drive.google.com/open?id=1hy0-BAEestT9H4a3Sv78xrHrzmZga9mj). Put it into the folder pretrained/deep_labv3.
 
-3. Change the path in 
+3. Change the video path and image path in train_iteration_conf.py.  
 
 ### Citation
 If you find the code and dataset useful in your research, please consider citing:
