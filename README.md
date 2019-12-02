@@ -11,8 +11,11 @@ Co-Attention Siamese Networks](http://openaccess.thecvf.com/content_CVPR_2019/pa
 ![](../master/framework.png)
 
 - - -
+:new:
 
-The pre-trained model and testing code:
+Our group co-attention achieves a further performance gain (81.1 mean J on DAVIS-16 dataset).
+
+The pre-trained model, testing and training code:
 
 ### Quick Start
 
