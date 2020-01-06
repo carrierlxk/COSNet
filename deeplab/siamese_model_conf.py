@@ -256,9 +256,9 @@ class CoattentionModel(nn.Module):
         exemplar, temp = self.encoder(input1)
         query, temp = self.encoder(input2)		 
         fea_size = query.size()[2:]	 
-#		 #all_dim = exemplar.shape[1]*exemplar.shape[2]
-        exemplar_flat = exemplar.view(-1, self.channel, self.dim) #N,C,H*W
-        query_flat = query.view(-1, self.channel, self.dim)
+        all_dim = fea_size[0]*fea_size[1]
+        exemplar_flat = exemplar.view(-1, query.size()[1], all_dim) #N,C,H*W
+        query_flat = query.view(-1, query.size()[1], all_dim)
         exemplar_t = torch.transpose(exemplar_flat,1,2).contiguous()  #batch size x dim x num
         exemplar_corr = self.linear_e(exemplar_t) # 
         A = torch.bmm(exemplar_corr, query_flat)
@@ -267,8 +267,8 @@ class CoattentionModel(nn.Module):
         query_att = torch.bmm(exemplar_flat, A).contiguous() #注意我们这个地方要不要用交互以及Residual的结构
         exemplar_att = torch.bmm(query_flat, B).contiguous()
         
-        input1_att = exemplar_att.view(-1, self.channel, fea_size[0], fea_size[1])  
-        input2_att = query_att.view(-1, self.channel, fea_size[0], fea_size[1])
+        input1_att = exemplar_att.view(-1, query.size()[1], fea_size[0], fea_size[1])  
+        input2_att = query_att.view(-1, query.size()[1], fea_size[0], fea_size[1])
         input1_mask = self.gate(input1_att)
         input2_mask = self.gate(input2_att)
         input1_mask = self.gate_s(input1_mask)
