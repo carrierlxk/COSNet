@@ -262,9 +262,9 @@ class CoattentionModel(nn.Module):
         exemplar_t = torch.transpose(exemplar_flat,1,2).contiguous()  #batch size x dim x num
         exemplar_corr = self.linear_e(exemplar_t) # 
         A = torch.bmm(exemplar_corr, query_flat)
-        A = F.softmax(A, dim = 1) #
+        A1 = F.softmax(A.clone(), dim = 1) #
         B = F.softmax(torch.transpose(A,1,2),dim=1)
-        query_att = torch.bmm(exemplar_flat, A).contiguous() #注意我们这个地方要不要用交互以及Residual的结构
+        query_att = torch.bmm(exemplar_flat, A1).contiguous() #注意我们这个地方要不要用交互以及Residual的结构
         exemplar_att = torch.bmm(query_flat, B).contiguous()
         
         input1_att = exemplar_att.view(-1, query.size()[1], fea_size[0], fea_size[1])  
