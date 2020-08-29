@@ -27,7 +27,7 @@ The pre-trained model, testing and training code:
 
 3. Run command: python test_coattention_conf.py --dataset davis --gpus 0
 
-4. Post CRF processing code: https://github.com/lucasb-eyer/pydensecrf
+4. Post CRF processing code comes from: https://github.com/lucasb-eyer/pydensecrf. 
 
 The pretrained weight can be download from [GoogleDrive](https://drive.google.com/open?id=14ya3ZkneeHsegCgDrvkuFtGoAfVRgErz) or [BaiduPan](https://pan.baidu.com/s/16oFzRmn4Meuq83fCYr4boQ), pass code: xwup.
 
