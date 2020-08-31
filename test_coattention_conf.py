@@ -50,7 +50,7 @@ def get_arguments():
                         help="choose gpu device.")
     parser.add_argument("--seq_name", default = 'bmx-bumps')
     parser.add_argument("--use_crf", default = 'True')
-    parser.add_argument("--sample_range", default =2)
+    parser.add_argument("--sample_range", default =5)
     
     return parser.parse_args()
 
@@ -83,18 +83,6 @@ def configure_dataset_model(args):
         args.vis_save_dir = "./result/test/davis_vis"
         args.corp_size =(473, 473)
         
-        
-    elif args.dataset == 'cityscapes':
-        args.data_dir ='/home/wty/AllDataSet/CityScapes'  #Path to the directory containing the PASCAL VOC dataset
-        args.data_list = './dataset/list/Cityscapes/cityscapes_test_list.txt'  #Path to the file listing the images in the dataset
-        args.img_mean = np.array((73.15835921, 82.90891754, 72.39239876), dtype=np.float32)
-        #RBG mean, first subtract mean and then change to BGR
-        args.ignore_label = 255   #The index of the label to ignore during the training
-        args.f_scale = 1  #resize image, and Unsample model output to original image size, label keeps
-        args.num_classes = 19  #Number of classes to predict (including background)
-        args.restore_from = './snapshots/cityscapes/psp_cityscapes_59.pth'  #Where restore model parameters from
-        args.save_segimage = True
-        args.seg_save_dir = "./result/test/Cityscapes"
     else:
         print("dataset error")
 
@@ -140,12 +128,6 @@ def main():
         interp = nn.Upsample(size=(505, 505), mode='bilinear')
         voc_colorize = VOCColorize()
         
-    elif args.dataset == 'cityscapes':
-        testloader = data.DataLoader(CityscapesTestDataSet(args.data_dir, args.data_list, f_scale= args.f_scale, mean= args.img_mean), 
-                                    batch_size=1, shuffle=False, pin_memory=True) # f_sale, meaning resize image at f_scale as input
-        interp = nn.Upsample(size=(1024, 2048), mode='bilinear')  #size = (h,w)
-        voc_colorize = VOCColorize()
-        
     elif args.dataset == 'davis':  #for davis 2016
         db_test = db.PairwiseImg(train=False, inputRes=(473,473), db_root_dir=args.data_dir,  transform=None, seq_name = None, sample_range = args.sample_range) #db_root_dir() --> '/path/to/DAVIS-2016' train path
         testloader = data.DataLoader(db_test, batch_size= 1, shuffle=False, num_workers=0)
@@ -189,46 +171,6 @@ def main():
         first_image = np.array(Image.open(args.data_dir+'/JPEGImages/480p/blackswan/00000.jpg'))
         original_shape = first_image.shape 
         output1 = cv2.resize(output1, (original_shape[1],original_shape[0]))
-        if 0:
-            original_image = target[0]
-            #print('image type:',type(original_image.numpy()))
-            original_image = original_image.numpy()
-            original_image = original_image.transpose((2, 1, 0))
-            original_image = cv2.resize(original_image, (original_shape[1],original_shape[0]))
-            unary = np.zeros((2,original_shape[0]*original_shape[1]), dtype='float32')
-            #unary[0, :, :] = res_saliency/255
-            #unary[1, :, :] = 1-res_saliency/255
-            EPSILON = 1e-8
-            tau = 1.05
-            
-            crf = dcrf.DenseCRF(original_shape[1] * original_shape[0], 2)
-            
-            anno_norm = (output1-np.min(output1))/(np.max(output1)-np.min(output1))#res_saliency/ 255.
-            n_energy = 1.0 - anno_norm + EPSILON#-np.log((1.0 - anno_norm + EPSILON)) #/ (tau * sigmoid(1 - anno_norm))
-            p_energy = anno_norm + EPSILON#-np.log(anno_norm + EPSILON) #/ (tau * sigmoid(anno_norm))
-
-            #unary = unary.reshape((2, -1))
-            #print(unary.shape)
-            unary[1, :] = p_energy.flatten()
-            unary[0, :] = n_energy.flatten()
-            
-            crf.setUnaryEnergy(unary_from_softmax(unary))
-
-            feats = create_pairwise_gaussian(sdims=(3, 3), shape=original_shape[:2])
-
-            crf.addPairwiseEnergy(feats, compat=3,
-                                  kernel=dcrf.DIAG_KERNEL,
-                                  normalization=dcrf.NORMALIZE_SYMMETRIC)
-
-            feats = create_pairwise_bilateral(sdims=(10, 10), schan=(1, 1, 1), # orgin is 60, 60 5, 5, 5
-                                              img=original_image, chdim=2)
-            crf.addPairwiseEnergy(feats, compat=5,
-                                  kernel=dcrf.DIAG_KERNEL,
-                                  normalization=dcrf.NORMALIZE_SYMMETRIC)
-
-            Q = crf.inference(5)
-            MAP = np.argmax(Q, axis=0)
-            output1 = MAP.reshape((original_shape[0],original_shape[1]))
 
         mask = (output1*255).astype(np.uint8)
         #print(mask.shape[0])
@@ -259,15 +201,6 @@ def main():
                 mask.save(seg_filename)
                 #np.concatenate((torch.zeros(1, 473, 473), mask, torch.zeros(1, 512, 512)),axis = 0)
                 #save_image(output1 * 0.8 + target.data, args.vis_save_dir, normalize=True)
-
-        elif args.dataset == 'cityscapes':
-            output = output.transpose(1,2,0)
-            output = np.asarray(np.argmax(output, axis=2), dtype=np.uint8)
-            if args.save_segimage:
-                output_color = cityscapes_colorize_mask(output)
-                output = Image.fromarray(output)
-                output.save('%s/%s.png'% (args.seg_save_dir, name[0]))
-                output_color.save('%s/%s_color.png'%(args.seg_save_dir, name[0]))
         else:
             print("dataset error")
     
