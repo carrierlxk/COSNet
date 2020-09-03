@@ -45,15 +45,16 @@ The segmentation results on DAVIS, FBMS and Youtube-objects can be download from
 4. Run command: python train_iteration_conf.py --dataset davis --gpus 0,1
 
 ### Citation
-If you find the code and dataset useful in your research, please consider citing:
 
+If you find the code and dataset useful in your research, please consider citing:
+```
 @InProceedings{Lu_2019_CVPR,  
 author = {Lu, Xiankai and Wang, Wenguan and Ma, Chao and Shen, Jianbing and Shao, Ling and Porikli, Fatih},  
 title = {See More, Know More: Unsupervised Video Object Segmentation With Co-Attention Siamese Networks},  
 booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},  
 year = {2019}  
 }
-
+```
 ### Other related projects/papers:
 [Saliency-Aware Geodesic Video Object Segmentation (CVPR15)](https://github.com/wenguanwang/saliencysegment)
 
