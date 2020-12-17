@@ -13,7 +13,7 @@ Co-Attention Siamese Networks](http://openaccess.thecvf.com/content_CVPR_2019/pa
 - - -
 :new:
 
-Our group co-attention achieves a further performance gain (81.1 mean J on DAVIS-16 dataset), related codes has also been released.
+Our group co-attention achieves a further performance gain (81.1 mean J on DAVIS-16 dataset), related codes have also been released.
 
 The pre-trained model, testing and training code:
 
@@ -55,6 +55,13 @@ author = {Lu, Xiankai and Wang, Wenguan and Ma, Chao and Shen, Jianbing and Shao
 title = {See More, Know More: Unsupervised Video Object Segmentation With Co-Attention Siamese Networks},  
 booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},  
 year = {2019}  
+}
+@article{lu2020zero,
+  title={Zero-Shot Video Object Segmentation with Co-Attention Siamese Networks},
+  author={Lu, Xiankai and Wang, Wenguan and Shen, Jianbing and Crandall, David and Luo, Jiebo},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2020},
+  publisher={IEEE}
 }
 ```
 ### Other related projects/papers:
