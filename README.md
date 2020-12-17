@@ -56,7 +56,7 @@ title = {See More, Know More: Unsupervised Video Object Segmentation With Co-Att
 booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},  
 year = {2019}  
 }
-@article{lu2020zero,
+@article{lu2020_pami,
   title={Zero-Shot Video Object Segmentation with Co-Attention Siamese Networks},
   author={Lu, Xiankai and Wang, Wenguan and Shen, Jianbing and Crandall, David and Luo, Jiebo},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
